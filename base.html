@@ -2,18 +2,83 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatiable" content="IE-edge,chrome=1">
+<meta http-equiv="X-UA-Compatiable" content="IE-edge,chrome=1">
 <title>Jquery course</title>
-	<meta name="Description" content="">
-	<meta name="author" content="DiscoveryVip">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="style.css">
+<meta name="Description" content="">
+<meta name="author" content="DiscoveryVip">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+.one {
+    background: #10C92B;
+    color: antiquewhite;
+}
+.two {
+    background: #18CDD5;
+    color: chocolate;
+}
+</style>
 </head>
 <body>
-	<div class="container">
-	</div>
-	<script>
+<div class="container">
+  <div id="myButton" class="btn btn-primary">click here for javascript</div>
+  <div id="myButton1" class="btn btn-danger">click here for jquery</div>
+</div>
+<div class="rows">
+	<a href="http://www.google.com">go to google</a>
+	<div class="col-md-6">
+    <h1><span class="one">Admin:</span></h1>
+    <p>Hello Dude!!</p>
+    <div class="col-md-6">
+      <h1 class="duplicate"><span class="two">User:</span></h1>
+      <p>Hello Bro</p>
+		</div>
+	</div></div>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script>
+	/*	var myButton = document.getElementById('myButton');
+		myButton.addEventListener("click", function(){alert('Hello');});
+		var myButton1 = document.getElementById('myButton1');
+		myButton1.addEventListener("click", function(){alert('hi');});
+		
+		*/
+		
+		
+		
 		console.log(document.body);
+		
+		
+		$(document).ready(function(){ 
+			///// jquery code starts here
+						  
+		/*	$("#myButton").click(function(){alert('Hello');});
+			$("#myButton1").click(function(){alert('hi');});    */
+			
+			$(".btn").click(function(){alert('Hello');});
+			$("h1.duplicate").click(function(){alert('Not a Button');});
+			
+			///global click function statement using *
+			
+		/*	$("*").click(function(){alert('Global');}); */
+		
+			////making everything clickable which are under div class
+			
+		/*	$('div > * ').click(function(){console.log(this);}); */
+			
+		/*	////// exciude div that are not nested in other div class
+			$('div:not(.col-md-6)').click(function(){console.log(this);});  */
+			
+			$("a[href*='google.com']").click(function(){console.log(this);});
+			
+		});
+		
+	/*	///// Method 2 for jquery code
+		$(function(){
+			
+		});  */
+		
 	</script>
 </body>
 </html>
