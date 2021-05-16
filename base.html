@@ -18,6 +18,10 @@
     background: #18CDD5;
     color: chocolate;
 }
+.three {
+    background: #E5C90C;
+    color: black;
+}
 </style>
 </head>
 <body>
@@ -25,20 +29,40 @@
   <div id="myButton" class="btn btn-primary">click here for javascript</div>
   <div id="myButton1" class="btn btn-danger">click here for jquery</div>
 </div>
-<div class="rows">
-	<a href="http://www.google.com">go to google</a>
-	<div class="col-md-6">
+<div class="rows"> <a href="http://www.google.com">go to google</a>
+  <div class="col-md-6">
     <h1><span class="one">Admin:</span></h1>
     <p>Hello Dude!!</p>
+    <h1 class="duplicate"><span class="two">User:</span></h1>
+    <p>Hello Bro</p>
     <div class="col-md-6">
-      <h1 class="duplicate"><span class="two">User:</span></h1>
-      <p>Hello Bro</p>
-		</div>
-	</div></div>
-  
+      <h1><span class="three">Intro</span></h1>
+      <p>This course is about JQuery</p>
+      <img src="https://www.webdesignerdepot.com/cdn-origin/uploads/2019/07/featured_jquery.jpg" alt="intro image" width="600" height="300" style="border: 4px solid red"> </div>
+  </div>
+</div>
+
+<! table definitions -->
+<div class="tables">
+  <table border="1" width="3">
+    <tr>
+      <td>About</td>
+    </tr>
+    <tr>
+      <td>Introduction</td>
+    </tr>
+    <tr>
+      <td>Contents</td>
+    </tr>
+    <tr>
+      <td>Misc.</td>
+    </tr>
+  </table>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
 <script>
-	/*	var myButton = document.getElementById('myButton');
+	
+		/*	var myButton = document.getElementById('myButton');
 		myButton.addEventListener("click", function(){alert('Hello');});
 		var myButton1 = document.getElementById('myButton1');
 		myButton1.addEventListener("click", function(){alert('hi');});
@@ -72,13 +96,41 @@
 			
 			$("a[href*='google.com']").click(function(){console.log(this);});
 			
+		////// looping the paragraphs	
+		/*	var myParagraph = $('p');
+			console.log(myParagraph);
+			for (x=0;x<myParagraph.length;x++){
+				console.log(myParagraph[x].innerHTML);
+			}   */
+			
+		///// table rows
+			$("tr:even").css("background-color","#DDDDDD");
+			$("tr:odd").css("background-color","#bbf");
+		
+			//// button events
+			$('.btn').click(function(){
+				console.log('clicked');
+	});
+			
+			$('img').mouseenter(function(){
+				$(this).css('border-color','yellow');
+				console.log('over image');
+			});
+			
+			$('p').mouseenter(function(){
+				$(this).css('visibility','hidden');
+				console.log('hidden');
+			})
 		});
+	
+	
 		
 	/*	///// Method 2 for jquery code
 		$(function(){
 			
 		});  */
-		
+
+
 	</script>
 </body>
 </html>
