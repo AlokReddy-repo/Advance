@@ -22,7 +22,39 @@
     background: #E5C90C;
     color: black;
 }
+	.active {
+		background-color: red; 
+	}
+	nav li {
+		display: inline-block;
+		font-size: 1em;
+		line-height: 50px;
+		height: 50px;
+		width: 100px;
+	}
+	nav a {
+		text-decoration: none;
+		color: aquamarine;
+		display: block;
+		padding: 0 5px;
+	}
+	nav a:hover {
+		background-color: aquamarine;
+		color:azure;
+	}
+/*	nav a:active {
+		background-color: orange;
+		color:black;
+	} */
 </style>
+	<nav>
+		<ul>
+			<li><a href="base.html">Home</a></li>
+			<li><a>About</a></li>
+			<li><a>Projects</a></li>
+			<li><a>Contact Us</a></li>
+		</ul>
+	</nav>
 </head>
 <body>
 <div class="container">
@@ -44,7 +76,7 @@
 
 <! table definitions -->
 <div class="tables">
-  <table border="1" width="3">
+  <table bordercolordark="blue" border="3px">
     <tr>
       <td>About</td>
     </tr>
@@ -59,20 +91,15 @@
     </tr>
   </table>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
 <script>
-	
-		/*	var myButton = document.getElementById('myButton');
+	/*	var myButton = document.getElementById('myButton');
 		myButton.addEventListener("click", function(){alert('Hello');});
 		var myButton1 = document.getElementById('myButton1');
 		myButton1.addEventListener("click", function(){alert('hi');});
 		
 		*/
-		
-		
-		
 		console.log(document.body);
-		
 		
 		$(document).ready(function(){ 
 			///// jquery code starts here
@@ -112,25 +139,58 @@
 				console.log('clicked');
 	});
 			
-			$('img').mouseenter(function(){
+	/*		$('img').mouseenter(function(){
 				$(this).css('border-color','yellow');
 				console.log('over image');
 			});
+				$('img').mouseleave(function(){
+				$(this).css('border-color','red');
+			}); */
 			
+			$('img').hover(function(){
+				$(this).css('border-color','yellow');
+				console.log('over image');
+			},
+			function(){ 
+				$(this).css('border-color','red');
+			});
+			
+			var holder;
 			$('p').mouseenter(function(){
-				$(this).css('visibility','hidden');
-				console.log('hidden');
-			})
+		/*		$(this).css('visibility','hidden');
+				console.log('hidden'); */
+				holder = $(this).html();
+				console.log(holder);
+				$(this).html('text changed');
+			});
+			
+			$('p').mouseleave(function(){
+				$(this).html(holder);
+			});
 		});
-	
-	
 		
 	/*	///// Method 2 for jquery code
 		$(function(){
 			
 		});  */
-
-
+	</script> 
+<script>
+	$(document).ready(function(){
+		$('.btn').on({
+			
+			"click": wasClicked,
+			"mouseover": function() {console.log('hovered');}
+		});
+		
+		function wasClicked(){
+			console.log('clicked');
+		}
+	});
+	</script>
+	<script>
+		$(document).ready(Function(){
+				$('nav a[href^="index.html"]').addClass('active');	  
+						  });
 	</script>
 </body>
 </html>
