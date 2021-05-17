@@ -19,17 +19,26 @@ a[href*='google.com'] {
   background: #E5C90C;
   color: black;
 }
+nav ul {
+	list-style-type: none;
+	margin:  0;
+	padding: 0;
+	height: 50px;
+	background-color:lightsalmon;
+	text-align:center;
+	
+}
 nav li {
   display: inline-block;
-  font-size: 1em;
+  font-size: 1.3em;
   line-height: 50px;
   height: 50px;
-  width: 100px;
+  width: 200px;
 }
 nav a {
   text-decoration: none;
-  color: aquamarine;
-  display: block;
+  color:darkblue;
+  display:block;
   padding: 0 5px;
 }
 nav a:hover {
@@ -39,4 +48,10 @@ nav a:hover {
 nav a:active {
   background-color: orange;
   color: black;
+}
+
+.yellow {
+	background: yellow;
+	color: dodgerblue;
+	font-size: 20px;
 }

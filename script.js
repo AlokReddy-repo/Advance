@@ -27,7 +27,7 @@ $(document).ready(function () {
 
   /*	$('div > * ').click(function(){console.log(this);}); */
 
-  /*	////// exciude div that are not nested in other div class
+  /*	////// exclude div that are not nested in other div class
   	$('div:not(.col-md-6)').click(function(){console.log(this);});  */
 
   $("a[href*='google.com']").click(function () {
@@ -98,7 +98,47 @@ $(document).ready(function () {
   function wasClicked() {
     console.log('clicked');
   }
+
+  //// adding background to a hyperlink	
   console.log(location.pathname.split("/")[1]);
   $('nav a[href^="' + location.pathname.split('/')[1] + '"]').addClass('active');
 
+  /*   //// adding background to a paragraph
+	$('p').click(function(){
+	$(this).addClass('yellow');
+	});
+	
+//// removing background to a paragraph
+	$('p').click(function(){
+	$(this).removeClass('yellow');
+	}); 
+	
+//// toggle background to a paragraph and also resize the font
+	$('p').click(function(){
+		if($(this).hasClass('yellow')){
+			console.log('do somethimg its blank');
+		}else{
+			console.log('do somethimg its yellow');
+		}
+	$(this).toggleClass('yellow');
+		console.log($(this).hasClass('yellow')); 
+	}); */
+
+  /*  //// Jquery attributes
+  	$('img').click(function(){
+  		console.log($(this)[0].alt);
+  		console.log($(this).attr('src'));
+  	}); */
+
+  //// Jquery checkbox and fields
+  $('#myInput').change(function () {
+    console.log($(this).val());
+    console.log($('#mychkbx'));
+    if ($(this).val() == 'yes') {
+      $('#mychkbx').prop('checked', true);
+    } else {
+      $('#mychkbx').prop('checked', false);
+      console.log($('#mychkbx').is(":checked"));
+    }
+  });
 });
