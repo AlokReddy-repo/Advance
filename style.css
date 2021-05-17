@@ -4,5 +4,39 @@
   font: italic 20px lighter;
 }
 a[href*='google.com'] {
-	background: blue;color: yellow;
+  background: blue;
+  color: yellow;
+}
+.one {
+  background: #10C92B;
+  color: antiquewhite;
+}
+.two {
+  background: #18CDD5;
+  color: chocolate;
+}
+.three {
+  background: #E5C90C;
+  color: black;
+}
+nav li {
+  display: inline-block;
+  font-size: 1em;
+  line-height: 50px;
+  height: 50px;
+  width: 100px;
+}
+nav a {
+  text-decoration: none;
+  color: aquamarine;
+  display: block;
+  padding: 0 5px;
+}
+nav a:hover {
+  background-color: aquamarine;
+  color: azure;
+}
+nav a:active {
+  background-color: orange;
+  color: black;
 }
