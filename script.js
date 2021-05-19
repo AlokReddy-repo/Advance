@@ -1,3 +1,4 @@
+/*eslint-disable no-console */
 /*	var myButton = document.getElementById('myButton');
 		myButton.addEventListener("click", function(){alert('Hello');});
 		var myButton1 = document.getElementById('myButton1');
@@ -58,6 +59,7 @@ $(document).ready(function () {
   			$(this).css('border-color','red');
   		}); */
 
+  //// img events
   $('img').hover(function () {
       $(this).css('border-color', 'yellow');
       console.log('over image');
@@ -66,18 +68,18 @@ $(document).ready(function () {
       $(this).css('border-color', 'red');
     });
 
+  /* //// paragraph events
   var holder;
   $('p').mouseenter(function () {
     /*		$(this).css('visibility','hidden');
-    		console.log('hidden'); */
+    		console.log('hidden'); 
     holder = $(this).html();
     console.log(holder);
     $(this).html('text changed');
   });
-
   $('p').mouseleave(function () {
     $(this).html(holder);
-  });
+  }); */
 });
 
 /*	///// Method 2 for jquery code
@@ -141,4 +143,27 @@ $(document).ready(function () {
       console.log($('#mychkbx').is(":checked"));
     }
   });
+
+  /*	//// Jquery HTML and Texts
+  	$('p').click(function(){
+  		console.log($(this).text());
+  		$(this).html('Hello<br>Class');
+  	}); */
+
+  /*	//// Jquery DOM Manipulation Methods
+  	$('p').click(function(){
+  		console.log($(this).text());
+  	//	$(this).empty();
+  	//	$(this).replaceWith('Hello<br>Gamers');
+  	//	$(this).after('Hi');
+  	//	$(this).before('Bye');
+  	//  $(this).append('number<br>');
+  	//	$(this).appendTo('#practice');
+  	//	$(this).prepend('games<br>');
+  		$(this).prependTo('#practice');
+  	}); */
+
+
 });
+
+/* eslint-enable no-console */
