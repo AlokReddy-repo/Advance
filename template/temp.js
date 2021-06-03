@@ -113,7 +113,7 @@ $(document).ready(function(){
 				$('#output').append("<div class='post'>" + val.name + "<br>" + val.age + "<br>" + val.dob + "</div>");
 			});
 			}
-		});
+		}); 
 	});
 });
 /* eslint-enable no-mixed-spaces-and-tabs */
