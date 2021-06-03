@@ -1,6 +1,7 @@
 // JavaScript Document
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-mixed-spaces-and-tabs */
 
 $(document).ready(function(){
 	console.log($(this));
@@ -82,6 +83,39 @@ $(document).ready(function(){
 		});
 		
 	});
+	
+	////AJAX Post
+	$('#btnpostajax').click(function(){
+		$('#output').html('sending....');
+	/*	$.post('result.php',{name:"test",age:23})
+		.done(function(data){
+			console.log(data);
+			  });  
+		
+		$.ajax({
+			method: "POST",
+			url: "result.php",
+			data: {name:"test",age:23}
+		})
+		.done(function(data){
+			console.log(data);
+			$('#output').html(data);
+		});  */
+		
+		//// Parse json using AJAX
+		$.ajax({
+			url: "tempdata.json",
+			dataType: "text",
+			success: function(data){
+				var json = $.parseJSON(data);
+				console.log(json);
+				$.each(json, function(key, val) {
+				$('#output').append("<div class='post'>" + val.name + "<br>" + val.age + "<br>" + val.dob + "</div>");
+			});
+			}
+		});
+	});
 });
+/* eslint-enable no-mixed-spaces-and-tabs */
 /* eslint-enable no-unused-vars */
 /* eslint-enable no-console */
